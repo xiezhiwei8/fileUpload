@@ -1,12 +1,13 @@
-# fileUpload
-文件上传
+==== fileUpload文件上传
+<br><br>
 
 1.首先修改 配置文件:config.properties
-upload-path=http://localhost:8080/fileUpload/
-如果是开发工具中启动，则：upload-path=http://localhost:8080/
+---
+upload-path=http://localhost:8080/fileUpload/ <br>
+如果是开发工具中启动，则：upload-path=http://localhost:8080/ <br>
 
 2.jsp示例
-
+---
 [html]
 <form id="testForm" method="post" enctype="multipart/form-data">
     <input type="hidden" name="folder" value="files/test"> <%--files 是固定的--%>
