@@ -3,6 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="/files/image/favicon.ico" />
 </head>
 <body>
 <h2>文件上传测试</h2>
@@ -42,8 +43,10 @@
                     data: formData,
                     contentType: false,//必须   避免JQuery操作，从而失去分界符
                     processData: false,//必须   不转换数据
-                    success: function (res) {
+                    success: function (res) {// res.code 等于0时成功，1时失败
                         console.log(res);
+                        $('.newPath').remove();
+                        $('body').append('<div class="newPath" style="background: #aab7bb">' + res.data.path + '</div>')
                     },
                     error: function (e) {
                         console.log(e)
