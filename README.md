@@ -14,9 +14,10 @@ upload-path=http://localhost:8080/
 ```
 # 2.jsp示例
 ## **[html]**
+folder是文件夹，该参数要传给服务器。value值中files不可更改，test可以是自定义目录；也可以多级目录，比如："files/我的文件夹/我的二级文件夹"。
 ```
 <form id="testForm" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="folder" value="files/test"> <%--files 是固定的--%>
+    <input type="hidden" name="folder" value="files/test">
     <input type="file" name="file">
 </form>
 <button class="test-submit">上传</button>
@@ -52,6 +53,6 @@ $(".test-submit").on("click", function () {
           });
 });
 ```   
-        
+
         
         
