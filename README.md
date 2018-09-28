@@ -1,21 +1,29 @@
-==== fileUpload文件上传
+fileUpload
+====
+文件上传
 <br><br>
 
-1.首先修改 配置文件:config.properties
----
-upload-path=http://localhost:8080/fileUpload/ <br>
-如果是开发工具中启动，则：upload-path=http://localhost:8080/ <br>
-
-2.jsp示例
----
-[html]
+# 1.首先修改 配置文件:`config.properties`
+如果是部署在tomcat中
+```
+upload-path=http://localhost:8080/fileUpload/
+```
+如果是开发工具中启动，则：
+```
+upload-path=http://localhost:8080/
+```
+# 2.jsp示例
+## **[html]**
+```
 <form id="testForm" method="post" enctype="multipart/form-data">
     <input type="hidden" name="folder" value="files/test"> <%--files 是固定的--%>
     <input type="file" name="file">
 </form>
 <button class="test-submit">上传</button>
-
-[js]
+```
+## **[js]**
+引入jQuery
+```
 //跨域上传文件方法地址
 var uploadPath = ""; 
       
@@ -43,7 +51,7 @@ $(".test-submit").on("click", function () {
               }
           });
 });
-        
+```   
         
         
         
